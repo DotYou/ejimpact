@@ -3,6 +3,48 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
+body.dark {
+	background-color: rgb(229, 229, 229);
+}
+
+/*
+.jumbotron {
+	background: url(../img/banner.jpg) no-repeat center center fixed;
+	background-size: 100% auto;
+}*/
+
+.jumbotron {
+	padding: 0;
+	height: 175px;
+	overflow: hidden;
+}
+
+.jumbotron img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (min-width: 768px) {
+	.jumbotron {
+		padding: 0;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.jumbotron img {
+		margin-top: -15%;
+	}
+}
+.jumbotron {
+	padding: 0;
+	height: 175px;
+	overflow: hidden;
+}
+
 .js-video {
     height: 0;
     padding-top: 25px;
@@ -13,7 +55,7 @@ body {
 }
 
 .js-video.widescreen {
-    padding-bottom: 57.25%;
+	padding-bottom: 49.30%;
 }
 
 .js-video.vimeo {
@@ -26,3 +68,4 @@ body {
     height: 100%;
     position: absolute;
 }
+
