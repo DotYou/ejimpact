@@ -162,8 +162,9 @@
 
 
 		<div class="col-sm-7 col-sm-pull-5  col-md-8 col-md-pull-4">
-			<div class="row">
-				<div class="col-md-6">
+			<div id="column-container" class="row js-masonry" data-masonry-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
+				<div class="col-md-6 grid-sizer"></div>
+				<div class="col-md-6 item">
 					<div class="list-group-item">
 						<h4><i class="fa fa-facebook-square"></i>&nbsp; ihopkc</h4>
 						"God is the initiator, and my job is to receive from Him and respond to Him."
@@ -175,21 +176,20 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 item">
 					<a class="list-group-item" href="#">
 						<h4><i class="fa fa-twitter"></i>&nbsp; @ihopkc</h4>
 						The closer you get to the person of God, the more gladness you experience. (1 Chron. 16:27)
 					</a>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 item">
 
 					<!-- Youtube video -->
 					<div class="js-video widescreen">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/wN3gueLT0D8?showinfo=0&playsinline=1&modestbranding=1&autohide=1&rel=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>
 					</div>
-
+				</div>
+				<div class="col-md-6 item">
 
 					<!-- GooglePlus style panel -->
 					<div class="panel panel-default panel-google-plus">
@@ -216,11 +216,7 @@
 
 				</div>
 
-				<div class="col-md-6">
-
-
-
-					<!-- GooglePlus style panel -->
+				<div class="col-md-6 item">
 					<div class="panel panel-default panel-google-plus">
 						<div class="panel-google-plus-tags">
 							<ul>
@@ -247,9 +243,9 @@
 							</button>
 						</div>
 					</div>
+				</div>
 
-
-
+				<div class="col-md-6 item">
 					<div class="list-group-item">
 						<h4><i class="fa fa-facebook-square"></i>&nbsp; ihopkc</h4>
 						Join us online for the 10am prayer meeting » <a href="#">http://www.ihopkc.org/prayerroom</a>  pic.twitter.com/seTMRKQ9Hg
@@ -279,7 +275,28 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="application/javascript">
+	$(window).scroll(function () {
+		if ($(window).scrollTop() >= $(document).height() - $(window).height() - 150) {
+			$.ajax({
+				url: "blocks.json",
+				type: "GET",
+				dataType: "json",
+				success: function (data) {
+					$(data.html).filter("div").each(function( index ) {
+						console.log(columns);
+						//console.log( index + ": " + $( this ).text() );
+					});
+				},
+				error: function (xhr, status) {
+					alert("Sorry, there was a problem!");
+				}
+			});
+		}
+	});
+</script>
 </body>
 </html>

@@ -2,17 +2,12 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-body.dark {
 	background-color: rgb(229, 229, 229);
 }
 
-/*
-.jumbotron {
-	background: url(../img/banner.jpg) no-repeat center center fixed;
-	background-size: 100% auto;
-}*/
+#column-container .col-md-6 {
+	margin-bottom: 20px;
+}
 
 .jumbotron {
 	padding: 0;

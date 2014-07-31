@@ -236,7 +236,7 @@
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
 	position: relative;
-	background-color: transparent;
+	background-color: #fff;
 	border: 1px solid #ddd;
 	padding: 1em;
 	margin-left: 55px;
